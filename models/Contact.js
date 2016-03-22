@@ -31,7 +31,7 @@ module.exports = {
     var contact = new Contact(contact);
     contact.save(function(err) {
       if (err) {
-        console.log(err);
+        console.log("Could not save contact");
         return false;
       } else {
         console.log("Contact Saved.");

@@ -15,8 +15,9 @@ router.get('/contacts/list', function(req, res, next) {
 
 /* POST add a contact to the database */
 router.post('/addContact', function(req, res, next) {
-  console.log("This is the request Body: " + req.body);
-  if (contacts.addContact(req.body.contact)) {
+  console.log("contact body on next line:");
+  console.log(req.body);
+  if (contacts.addContact(req.body)) {
     res.status(200).send("success");
   } else {
     res.status(500).send("error");
