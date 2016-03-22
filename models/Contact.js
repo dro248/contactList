@@ -9,17 +9,35 @@ var contactSchema = dao.Schema({
   },
   {collection: 'contacts'});
 
-var Recipe = dao.model('Contact', contactSchema);
+var Contact = dao.model('Contact', contactSchema);
 
-// Recipe database access methods go here
-exports = {
+// Contact database access methods go here
+module.exports = {
+  /**
+   * Get all of the contacts from the contacts collection
+   */
   getAll: function() {
-    return "Test. Contact array should be returned.";
+
+    Contact.find(function(err, contactList) {
+      console.log(contactList);
+    });
+
+    var hardCoded = [
+      {
+        name: "santi",
+        phone: "9737273220",
+        email: "santiago.verdu.01@gmail.com",
+        photo: "google.com",
+        address: "186 Lake Shore Drive"
+      }
+    ];
+    return hardCoded;
   },
   /**
-   * Returns a contact by it's name
+   * Inserts a contact into the contacts collection
+   * a contact has a name, phone, email, photo, address
    */
-  findByName: function(name) {
-    return "findByName not implemented.";
+  addContact: function(contact) {
+    Contact.insert(contact);
   }
 }
