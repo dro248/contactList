@@ -17,7 +17,7 @@ exports = {
     return "Test. Contact array should be returned.";
   },
   /**
-   * Returns a recipe by it's name
+   * Returns a contact by it's name
    */
   findByName: function(name) {
     return "findByName not implemented.";
