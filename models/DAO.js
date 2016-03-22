@@ -3,7 +3,7 @@
 \*********************************************************/
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/recipes');
+mongoose.connect('mongodb://localhost/contact');
 
 var db = mongoose.connection;
 
