@@ -30,6 +30,7 @@ body{
 	left: 104px;
 	height: 600px;
 	width: 390px;
+	background-color: grey;
 
 	max-height: 600px;
 	max-width: 390px;

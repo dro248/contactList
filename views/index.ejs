@@ -10,7 +10,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
 	<script src="javascripts/contactsList.js"></script>
 </head>
-<body ng-controller="ContactsListController as contactsList">
+<body ng-controller="ContactsListController">
 	<img id="background" src="img/background_blur.jpg" />
 
 	<div id="header">
@@ -71,10 +71,13 @@
 
 
 	<div id="screen">
-		<!-- <img src="img/background_blur.jpg" /> -->
-		<ul ng-repeat="contact in contactsList">
-			<li>
-				{{contact.name}}
+		<ul>
+			<li ng-repeat="contact in contacts">
+				<div>{{contact.name}}</div>
+				<div>{{contact.phone}}</div>
+				<div>{{contact.address}}</div>
+				<div>{{contact.photo}}</div>
+				<div>{{contact.email}}</div>
 			</li>
 		</ul>
 	</div>
