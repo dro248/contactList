@@ -15,28 +15,52 @@
 	<img id="phone" src="img/screen.png" />
 
 	<div id="formArea">
-		<form>
-			<section id="leftSide">
-				<p class="formLabel">Name:</p><br>
-				<input type="text" name="name" placeholder="Name"><br><br>
+		
+		<section id="leftSide">
+			<p class="formLabel">Name:</p><br>
+			<input type="text" id="formName" name="name" placeholder="Name"><br><br>
 
-				<p class="formLabel">Photo:</p><br>
-				<input type="text" name="photo" placeholder="Photo URL">
-			</section>
+			<p class="formLabel">Photo:</p><br>
+			<input type="text" id="formPhoto" name="photo" placeholder="Photo URL">
+		</section>
 
-			<section id="rightSide">
-				<p class="formLabel">Phone:</p><br>
-				<input type="text" name="phone" placeholder="(XXX) XXX-XXXX"><br><br>
+		<section id="rightSide">
+			<p class="formLabel">Phone:</p><br>
+			<input type="text" id="formPhone" name="phone" placeholder="(XXX) XXX-XXXX"><br><br>
 
-				<p class="formLabel">Email:</p><br>
-				<input type="text" name="email" placeholder="Email"><br><br>
+			<p class="formLabel">Email:</p><br>
+			<input type="text" id="formEmail" name="email" placeholder="Email"><br><br>
 
-				<p class="formLabel">Address:</p><br>
-				<input type="text" name="address" placeholder="Address"><br><br><br>
-				
-				<input type="submit" name="addContact">
-			</section>
-		</form>
+			<p class="formLabel">Address:</p><br>
+			<input type="text" id="formAddress" name="address" placeholder="Address"><br><br><br>
+			
+			<button id="addContactButton" onclick="sendContact()">Add Contact</button>
+		</section>
+		
+
+		<script>
+			function sendContact(){
+				var name = document.getElementById("formName").value,
+					phone = document.getElementById("formPhone").value,
+					email = document.getElementById("formEmail").value,
+					address = document.getElementById("formAddress").value,
+					photo = document.getElementById("formPhoto").value;
+
+				var postBody = {
+					name: name,
+					phone: phone,
+					email: email,
+					address: address,
+					photo: photo	
+				}
+
+				console.log("The name is " + name);
+
+				var xhttp = new XMLHttpRequest();
+				xhttp.open("POST", "/addContact", true);
+				xhttp.send(JSON.stringify(postBody));
+			}
+		</script>
 	</div>
 
 

@@ -101,7 +101,7 @@ input {
 	border-radius: 5px;
 }
 
-[type="submit"] {
+#addContactButton {
 	background: #64b9ce;
 	padding: 10px 15px;
 	border-radius: 5px;
@@ -112,7 +112,7 @@ input {
 	color: black;
 }
 
-[type="submit"]:active {
+#addContactButton:active {
 	background: #3693AA;
 	color: white;
 }
