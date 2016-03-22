@@ -10,10 +10,41 @@
 
 	<div id="header">
 		<h1>Contact List</h1>
-		<h4>Your contacts... all in one place</h4>
+		<h4>Your contacts... all in one place.</h4>
 	</div>
 
-	<img id="screen" src="./../public/img/screen.png" />
+	<img id="phone" src="./../public/img/screen.png" />
+
+	<div id="formArea">
+		<form>
+			<section id="leftSide">
+				<p class="formLabel">Name:</p><br>
+				<input type="text" name="name" placeholder="Name"><br><br>
+
+				<p class="formLabel">Photo:</p><br>
+				<input type="text" name="photo" placeholder="Photo URL">
+			</section>
+
+			<section id="rightSide">
+				<p class="formLabel">Phone:</p><br>
+				<input type="text" name="phone" placeholder="(XXX) XXX-XXXX"><br><br>
+
+				<p class="formLabel">Email:</p><br>
+				<input type="text" name="email" placeholder="Email"><br><br>
+
+				<p class="formLabel">Address:</p><br>
+				<input type="text" name="address" placeholder="Address"><br><br><br>
+				
+				<input type="submit" name="addContact">
+			</section>
+		</form>
+	</div>
+
+
+	<div id="screen">
+		<img src="./../public/img/background_blur.jpg" />
+
+	</div>
 
 </body>
 </html>

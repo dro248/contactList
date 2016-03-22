@@ -1,29 +1,52 @@
 body{
 	overflow-x: hidden;
-	overflow-y: hidden;
+	/*overflow-y: hidden;*/
+	min-height: 1000px;
+	background: #1F0C05;
 }
 
 #background{
-	height: 100%;
 	width: 100%;
+	height: 100%;
+	min-height: 800px;
 	z-index: -100;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 }
 
-#screen{
+#phone{
 	position: absolute;
 	top: 200px;
 	left: 50px;
 	/*height: 900px;*/
-	height: 80%;
+	height: 850px;
+	min-height: 500px;
+}
+
+#screen {
+	position: absolute;
+	top: 295px;
+	left: 104px;
+	height: 600px;
+	width: 390px;
+
+	max-height: 600px;
+	max-width: 390px;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+
+	background: red;	// temporary - remove this later
+
+	z-index: 10000;
 }
 
 #header{
 	position: absolute;
 	left: 95px;
 	top: 15px;
+	text-shadow: 3px 5px 3px black;
 }
 
 #header h1 {
@@ -39,3 +62,58 @@ body{
 	font-family: "Cabin Sketch";
 	line-height: 20px;
 }
+
+#formArea {
+	background: rgba(0,0,0,0.65);
+	position: absolute;
+	bottom: 10%;
+	right: 100px;
+	height: 400px;
+	width: 600px;
+
+	padding: 20px;
+	/*border-radius: 0 25px;*/
+}
+
+.formLabel {
+	color: white;
+	font-size: 2.35em;
+	font-family: "Cabin Sketch";
+	margin: 0;
+	margin-top: 20px;
+	line-height: 15px;
+}
+
+#formArea, #leftSide, #rightSide{
+	display: inline-block;
+	margin: 10px;
+	margin-left: 20px;
+	vertical-align: top;
+}
+
+#leftSide {
+	margin-bottom: 150px;
+}
+
+input {
+	line-height: 25px;
+	font-size: 20px;
+	border-radius: 5px;
+}
+
+[type="submit"] {
+	background: #64b9ce;
+	padding: 10px 15px;
+	border-radius: 5px;
+	border-style: none;
+
+	font-family: "Cabin Sketch";
+	font-size: 20px;
+	color: black;
+}
+
+[type="submit"]:active {
+	background: #3693AA;
+	color: white;
+}
+
