@@ -16,11 +16,15 @@ module.exports = {
    * Get all of the contacts from the contacts collection
    */
   getAll: function() {
-    Contact.find(function(err, contactList) {
-      if (err) {
-        console.log(err);
-      }
-      return contactList || [];
+    return new Promise(function(resolve, reject) {
+      Contact.find(function(err, contactList) {
+        if (err) {
+          console.log(err);
+          reject(err);
+        }
+        console.log(contactList);
+        resolve(contactList);
+      });
     });
   },
   /**
@@ -28,13 +32,13 @@ module.exports = {
    * a contact has a name, phone, email, photo, address
    */
   addContact: function(contact) {
-    var contact = new Contact(contact);
-    contact.save(function(err) {
+    var c = new Contact(contact);
+    c.save(function(err, obj) {
       if (err) {
         console.log("Could not save contact");
         return false;
       } else {
-        console.log("Contact Saved.");
+        console.log(obj);
         return true;
       }
     });
