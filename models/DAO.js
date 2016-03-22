@@ -3,7 +3,7 @@
 \*********************************************************/
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/contact');
+mongoose.connect('mongodb://localhost/contacts');
 
 var db = mongoose.connection;
 
