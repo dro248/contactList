@@ -73,11 +73,11 @@
 	<div id="screen">
 		<ul>
 			<li ng-repeat="contact in contacts">
-				<div>{{contact.name}}</div>
-				<div>{{contact.phone}}</div>
-				<div>{{contact.address}}</div>
-				<div>{{contact.photo}}</div>
-				<div>{{contact.email}}</div>
+				<div>{{contact.name?"Name: " + contact.name:""}}</div>
+				<div>{{contact.phone?"Phone: " + contact.phone:""}}</div>
+				<div>{{contact.address?"Address: " + contact.address:""}}</div>
+				<div>{{contact.photo?"Photo: " + contact.photo:""}}</div>
+				<div>{{contact.email?"Email: " + contact.email:""}}</div>
 			</li>
 		</ul>
 	</div>
