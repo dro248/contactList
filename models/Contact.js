@@ -32,15 +32,15 @@ module.exports = {
    * a contact has a name, phone, email, photo, address
    */
   addContact: function(contact) {
-    var c = new Contact(contact);
-    c.save(function(err, obj) {
-      if (err) {
-        console.log("Could not save contact");
-        return false;
-      } else {
-        console.log(obj);
-        return true;
-      }
+    return new Promise(function(resolve) {
+      var c = new Contact(contact);
+      c.save(function(err, obj) {
+        if (err) {
+          resolve(false);
+        } else {
+          resolve(true);
+        }
+      });
     });
   },
   /**
