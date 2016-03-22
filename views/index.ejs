@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="contactsListApp">
 <head>
+	<title>Contacts List</title>
 	<link href='https://fonts.googleapis.com/css?family=Oswald:300|Cabin+Sketch:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+
+	<!-- Include AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+	<script src="javascripts/contactsList.js"></script>
 </head>
-<body>
+<body ng-controller="ContactsListController as contactsList">
 	<img id="background" src="img/background_blur.jpg" />
 
 	<div id="header">
@@ -54,9 +59,9 @@
 					photo: photo	
 				}
 
-				console.log("The name is " + name);
+				console.log(JSON.stringify(postBody));
 
-				var xhttp = new XMLHttpRequest();
+				var xhttp = new XMLHttpRequest();				
 				xhttp.open("POST", "/addContact", true);
 				xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 				xhttp.send(JSON.stringify(postBody));
@@ -66,9 +71,14 @@
 
 
 	<div id="screen">
-		<img src="img/background_blur.jpg" />
-
+		<!-- <img src="img/background_blur.jpg" /> -->
+		<ul ng-repeat="contact in contactsList">
+			<li>
+				{{contact.name}}
+			</li>
+		</ul>
 	</div>
 
+	
 </body>
 </html>

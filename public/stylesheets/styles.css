@@ -37,8 +37,6 @@ body{
 	overflow-y: scroll;
 	overflow-x: hidden;
 
-	background: red;	// temporary - remove this later
-
 	z-index: 10000;
 }
 
@@ -117,3 +115,7 @@ input {
 	color: white;
 }
 
+.myContact {
+	background: lightblue;
+	color: black;
+}
