@@ -119,3 +119,26 @@ input {
 	background: lightblue;
 	color: black;
 }
+
+#screen ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#screen ul li {
+	background: linear-gradient(#f2f2f2, #bfbfbf);
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	padding: 8px;
+}
+
+#screen ul li:hover {
+/* 	background: linear-gradient(#bfbfbf, #ccc); */
+	background: linear-gradient(#d9d9d9, #f2f2f2);
+}
+
+#screen ul li:active {
+/* 	background: linear-gradient(#d9d9d9, #f2f2f2); */
+	background: linear-gradient(#bfbfbf, #ccc);
+}
